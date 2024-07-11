@@ -1,0 +1,15 @@
+version: '3'
+services:
+  customers-analysis-etl-duckdb:
+    platform: linux/amd64
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: customers-analysis-etl-duckdb
+    container_name: customers-analysis-etl-duckdb-container
+    volumes:
+      - ./data:/customer_orders_analysis/data
+      - ./customer_orders_analysis/entrypoint.sh:/customer_orders_analysis/entrypoint.sh
+    entrypoint: ["/entrypoint.sh"]
+    tty: true
+    stdin_open: true
