@@ -45,13 +45,6 @@ def main():
     product_category_df = load_data(df_path_dict["product_category_df"])
     order_payments_df = load_data(df_path_dict["order_payments_df"])
 
-    print(customers_df.head())
-    print(orders_df.head())
-    print(order_items_df.head())
-    print(products_df.head())
-    print(sellers_df.head())
-    print(product_category_df.head())
-    print(order_payments_df.head())
 
     list_of_dfs = [orders_df, 
                    order_items_df,
